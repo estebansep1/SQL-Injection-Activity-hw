@@ -7,6 +7,21 @@
   <link rel="stylesheet" type="text/css" href="style.css" >
 </head>
 <body>
-  
+  <form action="/login" method="post">
+    <div class="container">
+      <label for="username">Username</label>
+      <input type="text" required name="username">
+      <label for="password">Password</label>
+      <input type="password" required name="password">
+      <input type="submit" value="Submit">
+    </div>
+    <script>
+      if(document.location.hash === '#unauthorized') {
+        document.write('<div class=“unauthorized”>Invalid Username or Password</div>');
+      } else if(document.location.hash === '#error') {
+        document.write('<div class=“error”>An error has occurred</div>');
+      }
+    </script>
+  </form>
 </body>
 </html>
